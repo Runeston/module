@@ -1,0 +1,17 @@
+#!name=❏ 京东购物
+#!desc=广告拦截
+#!from=Mutu、RuCu6
+
+[Rule]
+# > 京东去开屏
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
+# > 屏蔽京东热搜
+URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotWords$,REJECT-TINYGIF
+URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=hotSearchTerms$,REJECT-TINYGIF
+
+[Script]
+# 京东lite去开屏
+京东lite开屏 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising,requires-body=1,max-size=0,script-path=Scripts/replace-body.js,argument=jdLiteAdvertisingVO->surge
+# 京东lite去弹窗
+京东lite弹窗 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush,requires-body=1,max-size=0,script-path=Scripts/replace-body.js,argument=pushData->surge
+
