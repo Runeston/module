@@ -15,3 +15,6 @@ URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTa
 ^https:\/\/pangolin\.snssdk\.com\/api\/ad\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 拦截页面广告
 ^https://goblin\.hupu\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+
+[MITM]
+hostname = %APPEND% goblin.hupu.com, api-access.pangolin-sdk-toutiao.com, pangolin.snssdk.com, bbs.mobileapi.hupu.com,  games.mobileapi.hupu.com
