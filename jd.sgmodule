@@ -3,11 +3,13 @@
 #!from=Mutu、RuCu6
 
 [Rule]
-# > 京东去开屏
+# 屏蔽京东开屏
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
+# 屏蔽京东lite搜索发现
+URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_hotWords$,REJECT-TINYGIF
 
 [Script]
-# 屏蔽京东热搜
+# 屏蔽京东搜索发现
 屏蔽京东热搜 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_json.js,script-update-interval=-1
 # 京东历史价格
 京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_price.js,script-update-interval=-1
