@@ -17,4 +17,4 @@ URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTa
 ^https://goblin\.hupu\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 [MITM]
-hostname = %APPEND% goblin.hupu.com, api-access.pangolin-sdk-toutiao.com, pangolin.snssdk.com, bbs.mobileapi.hupu.com,  games.mobileapi.hupu.com
+hostname = %APPEND% games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, goblin.hupu.com,      api-access.pangolin-sdk-toutiao.com, pangolin.snssdk.com
