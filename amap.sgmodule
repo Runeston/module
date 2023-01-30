@@ -1,6 +1,6 @@
 #!name=❏ 高德地图
 #!desc=广告拦截
-#!from=RuCu6
+#!from=RuCu6、Key
 
 [Rule]
 DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
