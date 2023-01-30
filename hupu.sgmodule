@@ -1,0 +1,17 @@
+#!name=❏ 虎扑论坛
+#!desc=广告拦截
+#!from=Runeston
+
+[Rule]
+# 去除大家都在搜
+URL-REGEX,^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist,REJECT-TINYGIF
+# 去除热门话题榜
+URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag),REJECT-TINYGIF
+
+[Map Local]
+# 拦截开屏广告
+^https://api-access\.pangolin-sdk-toutiao\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 偶尔出现
+^https:\/\/pangolin\.snssdk\.com\/api\/ad\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 拦截页面广告
+^https://goblin\.hupu\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
