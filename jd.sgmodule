@@ -5,7 +5,7 @@
 [Rule]
 # 屏蔽京东开屏
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
-# 屏蔽(京东|京东lite)热搜(Beta)
+# 屏蔽京东系热搜(Beta)
 URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
 
 [Script]
