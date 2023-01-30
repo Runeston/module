@@ -1,0 +1,19 @@
+#!name=❏ 哔哩哔哩
+#!desc=广告拦截
+#!from=ddgksf2013
+
+[Rule]
+# 禁用b站垃圾cdn
+OR,((AND,((OR,((DOMAIN-KEYWORD,-gd-), (DOMAIN-KEYWORD,-cm-), (DOMAIN-KEYWORD,-cu-), (DOMAIN-KEYWORD,-ct-))), (DOMAIN-KEYWORD,bilivideo.c))), (DOMAIN-SUFFIX,szbdyd.com), (DEST-PORT,4480)),REJECT-NO-DROP
+
+[URL Rewrite]
+# 去除大家都在搜
+^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject
+
+[Script]
+# 我的页面处理
+我的页面处理 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine,script-path= Scripts/bilibili.js
+# 解锁会员画质
+解锁B站高画质 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?,requires-body=1,max-size=0,script-path= Scripts/bilibili.js
+# 去除热搜发现
+去除热搜发现 = type=http-response,pattern=^https://app.bilibili.com/x/v2/search/square,requires-body=1,max-size=0,script-path= Scripts/bilibili.js
