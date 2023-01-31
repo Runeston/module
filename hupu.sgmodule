@@ -4,9 +4,9 @@
 
 [Rule]
 # 去除大家都在搜
-URL-REGEX,^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist,REJECT-TINYGIF
+URL-REGEX,^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist,REJECT
 # 去除热门话题榜
-URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag),REJECT-TINYGIF
+URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag),REJECT
 
 [Map Local]
 # 拦截开屏广告
