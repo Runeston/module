@@ -11,7 +11,7 @@
 ^https://goblin\.hupu\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 去除大家都在搜
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 去除热门话题榜
+# 去除热门话题榜(Beta)
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 
