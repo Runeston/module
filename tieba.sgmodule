@@ -3,6 +3,7 @@
 #!from=app2smile
 
 [Rule]
+# 拦截DNS解析
 DOMAIN,180.76.76.200,REJECT-DROP
 IP-CIDR,180.76.76.200/32,REJECT-DROP,no-resolve
 

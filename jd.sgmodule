@@ -9,10 +9,8 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMa
 URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
 
 [Script]
-# 京东历史价格
 京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_price.js,script-update-interval=-1
-# 屏蔽京东lite广告(开屏与弹窗)
-京东lite广告 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(lite_advertising|lite_SmartPush),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=jdLiteAdvertisingVO->surge
+京东lite去广告 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(lite_advertising|lite_SmartPush),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=jdLiteAdvertisingVO->surge
 
 [MITM]
 hostname = %APPEND% api.m.jd.com

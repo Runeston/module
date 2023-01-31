@@ -3,24 +3,18 @@
 #!from=RuCu6、Key
 
 [Rule]
+# 屏蔽广告请求
 DOMAIN-SUFFIX,amdc.m.taobao.com,REJECT
 URL-REGEX,\/amdc\/mobileDispatch,REJECT
 
 [Script]
-# 首页卡片
-amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-# 我的卡片
-amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-# 首页右上角动图
-amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-# 附近页面
-amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-# 地点详情页
-amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-# 开屏广告
-amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-# 打车卡片
-amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+首页卡片 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+我的卡片 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+首页动图 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+附近页面 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+地点详情页 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+开屏广告 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+打车卡片 = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
 
 [Map Local]
 # 路线规划
