@@ -1,0 +1,14 @@
+#!name=❏ 酷安社区
+#!desc=广告拦截
+#!from=RuCu6
+
+[URL Rewrite]
+# 屏蔽热门搜索
+^https:\/\/api\.coolapk\.com\/v\d\/search\?.*type=hotSearch - reject
+
+[Script]
+# 屏蔽首页广告
+酷安去广告 = type=http-response,pattern=^https?:\/\/api.coolapk.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/coolapk.js,script-update-interval=-1
+
+[MITM]
+hostname = %APPEND% api.coolapk.com     
