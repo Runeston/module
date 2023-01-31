@@ -4,9 +4,9 @@
 
 [Rule]
 # 去除大家都在搜
-URL-REGEX,^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist,REJECT
+#URL-REGEX,^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist,REJECT
 # 去除热门话题榜
-URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag),REJECT
+#URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag),REJECT
 
 [Map Local]
 # 拦截开屏广告
@@ -15,6 +15,11 @@ URL-REGEX,^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTa
 ^https:\/\/pangolin\.snssdk\.com\/api\/ad\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 拦截页面广告
 ^https://goblin\.hupu\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 去除大家都在搜
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 去除热门话题榜
+^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+
 
 [MITM]
 hostname = %APPEND% games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, goblin.hupu.com, api-access.pangolin-sdk-toutiao.com, pangolin.snssdk.com
