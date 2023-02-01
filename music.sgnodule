@@ -3,9 +3,8 @@
 #!from=Key,Runeston
 
 [Rule]
+# 拦截广告域名
 DOMAIN,iadmusicmat.music.126.net,REJECT-NO-DROP
-DOMAIN,iadmat.nosdn.127.net,REJECT-NO-DROP
-DOMAIN,iadmatapk.nosdn.127.net,REJECT-NO-DROP
 DOMAIN,iadmusicmatvideo.music.126.net,REJECT-NO-DROP
 DOMAIN,httpdns.n.netease.com,REJECT-NO-DROP
 DOMAIN,gdt.qq.com,REJECT-NO-DROP
@@ -14,6 +13,7 @@ DOMAIN-SUFFIX,163jiasu.com,REJECT-NO-DROP
 [Map Local]
 # 网易云音乐
 ^https?:\/\/interface3?\.music\.163\.com\/eapi\/(community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|comment\/hotcomment\/collect) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/interface3?\.music\.163\.com\/eapi\/ad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 # QQ音乐
 ^https:\/\/tmead\.y\.qq\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
