@@ -1,6 +1,6 @@
 #!name=❏ 哔哩贴吧
 #!desc=广告拦截
-#!from=app2smile
+#!from=app2smile,RuCu6
 
 [Rule]
 # 拦截贴吧DNS解析

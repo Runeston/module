@@ -1,6 +1,6 @@
 #!name=❏ 虎扑酷安
 #!desc=广告拦截
-#!from=Runeston
+#!from=Runeston,RuCu6
 
 [URL Rewrite]
 # 屏蔽热门搜索
