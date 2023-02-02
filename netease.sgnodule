@@ -1,6 +1,6 @@
-#!name=❏ 音乐应用
+#!name=❏ 网易音乐
 #!desc=广告拦截
-#!from=Key,Runeston
+#!from=Key,RuCu6
 
 [General]
 force-http-engine-hosts = %APPEND% 59.111.*:0
@@ -14,17 +14,12 @@ DOMAIN,gdt.qq.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,163jiasu.com,REJECT-NO-DROP
 
 [Map Local]
-# > 网易云音乐
 # 播放页
 ^https?:\/\/interface3?\.music\.163\.com\/eapi\/(community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|comment\/hotcomment\/collect) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 开屏
 ^https?:\/\/interface3?\.music\.163\.com\/eapi\/ad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 推广
 ^https:\/\/interface3\.music\.163\.com\/eapi\/link\/(position|scene)\/show\/resource data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# QQ音乐
-^https:\/\/tmead\.y\.qq\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-^https:\/\/ad\.tencentmusic\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-^https:\/\/adstats\.tencentmusic\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 
 [MITM]
-hostname = %APPEND% tmead.y.qq.com, ad.tencentmusic.com, interface*.music.163.com, 112.13.*, 59.111.*, adstats.tencentmusic.com
+hostname = %APPEND% 112.13.*, 59.111.*, interface*.music.163.com
