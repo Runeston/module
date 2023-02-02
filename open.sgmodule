@@ -1,0 +1,32 @@
+#!name=❏ 开屏合集
+#!desc=广告拦截
+#!from=many workers
+
+[Rule]
+# 彩云天气
+DOMAIN,ad.caiyunapp.com,REJECT-NO-DROP
+# 爱思助手
+URL-REGEX,^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml,REJECT 
+# 威锋
+URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT
+# 中国联通
+URL-REGEX,^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv),REJECT
+URL-REGEX,^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd),REJECT
+# 识货
+URL-REGEX,^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen,REJECT
+^https?:\/\/www\.shihuo\.cn\/app\d\/saveAppInfo,REJECT
+# 得物
+URL-REGEX,^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/,REJECT
+# 顺丰速运
+URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
+URL-REGEX,https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
+# 斗鱼
+URL-REGEX,^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo,REJECT
+# 菜鸟裹裹
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn\/,REJECT
+
+
+[MITM]
+hostname = %APPEND% list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com
+
+
