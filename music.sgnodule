@@ -2,6 +2,9 @@
 #!desc=广告拦截
 #!from=Key,Runeston
 
+[General]
+force-http-engine-hosts = %APPEND% 59.111.*:0
+
 [Rule]
 # 拦截广告域名
 DOMAIN,iadmusicmat.music.126.net,REJECT-NO-DROP
@@ -20,4 +23,4 @@ DOMAIN-SUFFIX,163jiasu.com,REJECT-NO-DROP
 ^https:\/\/adstats\.tencentmusic\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 
 [MITM]
-hostname = %APPEND% tmead.y.qq.com, ad.tencentmusic.com, interface*.music.163.com, adstats.tencentmusic.com
+hostname = %APPEND% tmead.y.qq.com, ad.tencentmusic.com, interface*.music.163.com, 112.13.*, 59.111.*, adstats.tencentmusic.com
