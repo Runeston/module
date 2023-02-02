@@ -14,7 +14,7 @@ URL-REGEX,^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\
 URL-REGEX,^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd),REJECT
 # 识货
 URL-REGEX,^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen,REJECT
-^https?:\/\/www\.shihuo\.cn\/app\d\/saveAppInfo,REJECT
+URL-REGEX,^https?:\/\/www\.shihuo\.cn\/app\d\/saveAppInfo,REJECT
 # 得物
 URL-REGEX,^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/,REJECT
 # 顺丰速运
