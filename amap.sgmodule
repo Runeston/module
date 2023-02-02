@@ -19,6 +19,8 @@ URL-REGEX,\/amdc\/mobileDispatch,REJECT
 [Map Local]
 # 路线规划
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 我的主页
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/usr-profile-fc\/home\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 首页消息横幅
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
@@ -32,6 +34,7 @@ URL-REGEX,\/amdc\/mobileDispatch,REJECT
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 打车弹窗
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/friendly_information\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-
+# 我的足迹
+^https:\/\/sns\.amap\.com\/ws\/userview\/footprint data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 [MITM]
 hostname = %APPEND% m5.amap.com, m5-zb.amap.com, sns.amap.com
