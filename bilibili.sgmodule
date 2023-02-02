@@ -16,7 +16,7 @@ OR,((AND,((OR,((DOMAIN-KEYWORD,-gd-), (DOMAIN-KEYWORD,-cm-), (DOMAIN-KEYWORD,-cu
 去除热搜发现 = type=http-response,pattern=^https://app.bilibili.com/x/v2/search/square,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js,script-update-interval=-1
 
 [Map Local]
-# 屏蔽facebook追逐
+# 屏蔽facebook追踪
 ^https:\/\/graph\.facebook\.com\/ data="Mock/reject-200.txt"
 
 [MITM]
