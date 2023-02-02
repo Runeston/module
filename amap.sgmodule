@@ -36,5 +36,6 @@ URL-REGEX,\/amdc\/mobileDispatch,REJECT
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/friendly_information\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 我的足迹
 ^https:\/\/sns\.amap\.com\/ws\/userview\/footprint data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+
 [MITM]
 hostname = %APPEND% m5.amap.com, m5-zb.amap.com, sns.amap.com
