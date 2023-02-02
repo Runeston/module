@@ -15,6 +15,8 @@ DOMAIN-SUFFIX,163jiasu.com,REJECT-NO-DROP
 ^https?:\/\/interface3?\.music\.163\.com\/eapi\/(community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|comment\/hotcomment\/collect) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 ^https?:\/\/interface3?\.music\.163\.com\/eapi\/ad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
+^https?:\/\/interface3?\.music\.163.com\/eapi\/(comment\/feed\/inserted|v\d\/content\/exposure\/comment\/banner|link\/scene\/show|comment\/hotcomment\/collect|vipcenter\/tspopup\/get|vipauth/app/auth/query) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/blank_dict.json"
+
 # QQ音乐
 ^https:\/\/tmead\.y\.qq\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 ^https:\/\/ad\.tencentmusic\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
