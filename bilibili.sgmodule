@@ -4,7 +4,7 @@
 
 [Rule]
 # 禁用b站垃圾cdn
-OR,((AND,((OR,((DOMAIN-KEYWORD,-gd-), (DOMAIN-KEYWORD,-cm-), (DOMAIN-KEYWORD,-cu-), (DOMAIN-KEYWORD,-ct-))), (DOMAIN-KEYWORD,bilivideo.c))), (DOMAIN-SUFFIX,szbdyd.com), (DEST-PORT,4480)),REJECT-NO-DROP
+OR,((AND,((OR,((DEST-PORT,4480), (DEST-PORT,4483), (DEST-PORT,9305))), (IP-CIDR,0.0.0.0/0,no-resolve))), (DOMAIN-KEYWORD,pcdn), (DOMAIN-SUFFIX,szbdyd.com)),REJECT-NO-DROP
 
 [URL Rewrite]
 # 去除大家都在搜
