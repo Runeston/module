@@ -4,9 +4,9 @@
 
 [Map Local]
 # 拦截开屏
-^https:\/\/tmead\.y\.qq\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-^https:\/\/ad\.tencentmusic\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-^https:\/\/adstats\.tencentmusic\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https:\/\/tmead\.y\.qq\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https:\/\/ad\.tencentmusic\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https:\/\/adstats\.tencentmusic\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 
 [MITM]
 hostname = %APPEND% tmead.y.qq.com, ad.tencentmusic.com, adstats.tencentmusic.com
