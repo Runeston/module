@@ -16,14 +16,14 @@ URL-REGEX,^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|ge
 URL-REGEX,^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen,REJECT
 URL-REGEX,^https?:\/\/www\.shihuo\.cn\/app\d\/saveAppInfo,REJECT
 # 得物
-URL-REGEX,^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/,REJECT
+URL-REGEX,^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement,REJECT
 # 顺丰速运
 URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
 URL-REGEX,https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
 # 斗鱼
 URL-REGEX,^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo,REJECT
 # 菜鸟裹裹
-URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn\/,REJECT-NO-DROP
+URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn,REJECT-NO-DROP
 
 
 [MITM]

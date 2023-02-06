@@ -6,14 +6,13 @@
 # 拦截开屏广告
 ^https://api-access\.pangolin-sdk-toutiao\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 偶尔出现
-^https:\/\/pangolin\.snssdk\.com\/api\/ad\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/pangolin\.snssdk\.com\/api\/ad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 拦截页面广告
 ^https://goblin\.hupu\.com data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 去除大家都在搜
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 去除热门话题榜(Beta)
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-
 
 [MITM]
 hostname = %APPEND% games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, goblin.hupu.com, api-access.pangolin-sdk-toutiao.com, pangolin.snssdk.com
