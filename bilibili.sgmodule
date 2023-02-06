@@ -1,10 +1,6 @@
 #!name=❏ 哔哩哔哩
 #!desc=广告拦截
-#!from=ddgksf2013、小白脸
-
-[Rule]
-# 禁用b站垃圾cdn
-OR,((AND,((OR,((DEST-PORT,4480), (DEST-PORT,4483), (DEST-PORT,9305))), (IP-CIDR,0.0.0.0/0,no-resolve))), (DOMAIN-KEYWORD,pcdn), (DOMAIN-SUFFIX,szbdyd.com)),REJECT-NO-DROP
+#!from=ddgksf2013
 
 [URL Rewrite]
 # 去除大家都在搜
