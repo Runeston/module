@@ -9,8 +9,6 @@ URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/real_time_launch_v2\?,REJ
 # 拦截品牌提问广告
 URL-REGEX,^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\?,REJECT
 URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\?,REJECT
-# 屏蔽开通盐选会员的卡片
-URL-REGEX,^https?:\/\/(api\.zhihu\.com|(103\.41\.167\.(226|234|235|236)))\/people\/self\/new_user_card,REJECT
 # 其他拦截不影响使用的域名
 DOMAIN,mqtt.zhihu.com,REJECT
 DOMAIN,sugar.zhihu.com,REJECT
@@ -25,6 +23,8 @@ DOMAIN,appcloud2.in.zhihu.com,REJECT
 ^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 屏蔽下发的配置，如皮肤等
 ^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json" header="Content-Type: application/x-protobuf"
+# 屏蔽我的页面开通会员的卡片
+^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 去除底部标签页关注人角标
 ^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 去除消息通知角标
