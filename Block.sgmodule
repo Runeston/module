@@ -9,6 +9,11 @@ DOMAIN,ad.12306.cn,DIRECT
 DOMAIN,ad.caiyunapp.com,REJECT-NO-DROP
 # 百度网页
 DOMAIN,mbdp02.bdstatic.com,REJECT-NO-DROP
+# 虎扑社区
+DOMAIN,goblin.hupu.com,REJECT-NO-DROP
+# 广告域名
+DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
 # 爱思助手
 URL-REGEX,^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml,REJECT 
 # 威锋
@@ -34,12 +39,25 @@ URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword,REJE
 [URL Rewrite]
 # 百度网盘
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
+# 酷安热门搜索
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject
 # Pornhub
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
 
 [Script]
 12306 = type=http-response,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/12306.js
 微信公众号 = type=http-response,pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,requires-body=1,script-path=Scripts/replace-body.js,argument=""advertisement_num":\d,"advertisement_info":\[.+\]->"advertisement_num":0,"advertisement_info":[]",max-size=0
+酷安 = type=http-response,pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+
+[Map Local]
+# 虎扑大家都在搜
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 虎扑热门话题榜(Beta)
+^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com
+hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com, api.coolapk.com, games.mobileapi.hupu.com, bbs.mobileapi.hupu.com  
+
+
+
+
