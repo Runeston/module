@@ -7,9 +7,6 @@ force-http-engine-hosts = %APPEND% 59.111.*:0
 
 [Rule]
 # 拦截广告域名
-DOMAIN,tmead.y.qq.com,REJECT-NO-DROP
-DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
-DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 DOMAIN,iadmusicmat.music.126.net,REJECT-NO-DROP
 DOMAIN,iadmusicmatvideo.music.126.net,REJECT-NO-DROP
 DOMAIN,httpdns.n.netease.com,REJECT-NO-DROP
