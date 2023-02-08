@@ -54,8 +54,6 @@ URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword,REJE
 [URL Rewrite]
 # 百度网盘页面
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
-# 酷安热门搜索
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject
 # Pornhub
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
 
@@ -82,6 +80,8 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 虎扑热门话题榜(Beta)
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 酷安热门搜索
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # Facebook追踪
 ^https:\/\/graph\.facebook\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 减少YouTube开销
