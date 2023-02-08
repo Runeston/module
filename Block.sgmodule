@@ -43,6 +43,7 @@ URL-REGEX,^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo,REJECT
 URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn,REJECT-NO-DROP
 URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword,REJECT
 
+
 [URL Rewrite]
 # 百度网盘页面
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
@@ -51,20 +52,30 @@ URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword,REJE
 # Pornhub
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
 
+
 [Script]
 12306开屏 = type=http-response,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/12306.js
 微信公众号 = type=http-response,pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,requires-body=1,script-path=Scripts/replace-body.js,argument=""advertisement_num":\d,"advertisement_info":\[.+\]->"advertisement_num":0,"advertisement_info":[]",max-size=0
 酷安首页 = type=http-response,pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+# 京东
+京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_price.js
 京东lite开屏 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=jdLiteAdvertisingVO->surge
 京东lite弹窗 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=pushData->surge
-京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_price.js
+# 哔哩哔哩
+我的页面处理 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
+解锁会员画质 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
+去除热搜发现 = type=http-response,pattern=^https://app.bilibili.com/x/v2/search/square,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
+
 
 [Map Local]
 # 虎扑大家都在搜
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 虎扑热门话题榜(Beta)
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# Facebook追踪
+^https:\/\/graph\.facebook\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com, api.coolapk.com, games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, api.m.jd.com
+hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com, api.coolapk.com, games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, api.m.jd.com, app.bilibili.com, graph.facebook.com
 
