@@ -17,8 +17,6 @@ DOMAIN,ad.12306.cn,DIRECT
 DOMAIN,ad.caiyunapp.com,REJECT-NO-DROP
 # 百度网页
 DOMAIN,mbdp02.bdstatic.com,REJECT-NO-DROP
-# 虎扑社区
-DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 # 广告域名
 DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
@@ -34,6 +32,8 @@ URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVe
 URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
 
 [URL Rewrite]
+# 头条域名
+^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject
 # 百度网盘
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
 # 爱思助手
@@ -47,6 +47,7 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 威锋
 ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) - reject
 # 虎扑
+^https:\/\/goblin\.hupu\.com\/.+\/interfaceAd\/getOther\/v2\? - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/hotkeylist\? - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/contentlist\/entrance\/list\? - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/competition\/getCompetitionTopicList\? - reject
