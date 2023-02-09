@@ -76,7 +76,7 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 
 [Map Local]
 # 酷安热门搜索
-^https:\/\/api\.coolapk\.com\/v6\/search\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/api\.coolapk\.com\/v6\/search\?.+type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 中国联通
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 ^https?:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
