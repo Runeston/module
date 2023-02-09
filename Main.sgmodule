@@ -39,13 +39,16 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 爱思助手
 ^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml - reject
 # 得物
-^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
+^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
 # 识货
 ^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/(screen|ad) - reject
 # 斗鱼
 ^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo - reject
 # 威锋
 ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) - reject
+# 虎扑
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/hotkeylist\? - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/contentlist\/entrance\/list\? - reject
 # Pornhub
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
 
@@ -71,10 +74,6 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/tieba-proto.js
 
 [Map Local]
-# 虎扑大家都在搜
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 虎扑热门话题榜(Beta)
-^https?:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 酷安热门搜索
 ^https:\/\/api\.coolapk\.com\/v6\/search\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 中国联通
