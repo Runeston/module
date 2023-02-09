@@ -28,15 +28,15 @@ DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
 DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 # 京东
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
-URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
 # 识货
 URL-REGEX,^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/screen,REJECT
 URL-REGEX,^https?:\/\/www\.shihuo\.cn\/app\d\/saveAppInfo,REJECT
 # 得物
-URL-REGEX,^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/,REJECT
+URL-REGEX,^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/,REJECT
 # 顺丰速运
 URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
-URL-REGEX,https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
+URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
 # 斗鱼
 URL-REGEX,^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo,REJECT
 
@@ -66,18 +66,18 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 
 [Map Local]
 # 虎扑大家都在搜
-^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 虎扑热门话题榜(Beta)
-^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 酷安热门搜索
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 爱思助手开屏
-^https:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 威锋开屏
-^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 中国联通
-^https:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-^https:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 菜鸟裹裹
 ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
