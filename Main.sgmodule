@@ -17,6 +17,9 @@ DOMAIN,ad.12306.cn,DIRECT
 DOMAIN,ad.caiyunapp.com,REJECT-NO-DROP
 # 百度网页
 DOMAIN,mbdp02.bdstatic.com,REJECT-NO-DROP
+# 广告域名
+DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
 # QQ音乐
 DOMAIN,tmead.y.qq.com,REJECT-NO-DROP
 DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
@@ -29,6 +32,8 @@ URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVe
 URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
 
 [URL Rewrite]
+# 头条域名
+^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject
 # 百度网盘
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
 # 爱思助手
@@ -71,8 +76,6 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/tieba-proto.js
 
 [Map Local]
-# 头条域名
-^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 酷安热门搜索
 ^https:\/\/api\.coolapk\.com\/v6\/search\?.+type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 中国联通
