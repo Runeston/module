@@ -29,8 +29,6 @@ DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 # 京东
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
 URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
-# 威锋
-URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT
 # 中国联通
 URL-REGEX,^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv),REJECT
 URL-REGEX,^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd),REJECT
@@ -82,6 +80,8 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 爱思助手开屏
 ^https:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+# 威锋开屏
+^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # Facebook追踪
 ^https:\/\/graph\.facebook\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 减少YouTube开销
