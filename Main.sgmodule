@@ -44,10 +44,6 @@ URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetf
 URL-REGEX,^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword,REJECT
 
 [URL Rewrite]
-# 中国联通
-^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
-^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) - reject
-^https:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? - reject
 # 百度网盘
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
 # Pornhub
@@ -82,6 +78,10 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 ^https:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 威锋开屏
 ^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+# 中国联通
+^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # Facebook追踪
 ^https:\/\/graph\.facebook\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 减少YouTube开销
