@@ -32,12 +32,20 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotS
 # 顺丰速运
 URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
 URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
-# 斗鱼
-URL-REGEX,^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo,REJECT
 
 [URL Rewrite]
 # 百度网盘
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
+# 爱思助手
+^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml - reject
+# 得物
+^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
+# 识货
+^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/(screen|ad) - reject
+# 斗鱼
+^https?:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo - reject
+# 威锋
+^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) - reject
 # Pornhub
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
 
@@ -66,20 +74,12 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 ^https?:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 酷安热门搜索
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 爱思助手开屏
-^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-# 威锋开屏
-^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 中国联通
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 ^https?:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 菜鸟裹裹
 ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-# 得物
-^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-# 识货
-^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/(screen|ad) data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # Facebook追踪
 ^https:\/\/graph\.facebook\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 减少YouTube开销
