@@ -20,6 +20,8 @@ DOMAIN,mbdp02.bdstatic.com,REJECT-NO-DROP
 # 广告域名
 DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
+# 虎扑
+DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 # QQ音乐
 DOMAIN,tmead.y.qq.com,REJECT-NO-DROP
 DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
@@ -47,7 +49,6 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 威锋
 ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) - reject
 # 虎扑
-^https:\/\/goblin\.hupu\.com\/.+\/interfaceAd\/getOther\/v2\? - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/hotkeylist\? - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/contentlist\/entrance\/list\? - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/competition\/getCompetitionTopicList\? - reject
