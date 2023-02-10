@@ -1,4 +1,4 @@
-#!name=❏ 应用合集
+#!name=❏ 脚本合集
 #!desc=综合配置
 #!from=many workers
 
@@ -54,10 +54,26 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/competition\/getCompetitionTopicList\? - reject
 # Pornhub
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
+# Redirect Google Search Service
+^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+# Redirect Google Maps Service
+^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
+# Redirect HTTP to HTTPS
+^https?:\/\/(www.)?taobao\.com\/ https://taobao.com/ 302
+^https?:\/\/(www.)?jd\.com\/ https://www.jd.com/ 302
+^https?:\/\/(www.)?mi\.com\/ https://www.mi.com/ 302
+^https?:\/\/you\.163\.com\/ https://you.163.com/ 302
+^https?:\/\/(www.)?suning\.com\/ https://suning.com/ 302
+^https?:\/\/(www.)?yhd\.com\/ https://yhd.com/ 302
+# Redirect False to True
+^https?:\/\/(www.)?firefox\.com\.cn\/(download\/)?$ https://www.mozilla.org/zh-CN/firefox/new/ 302
+^https?:\/\/(www.)?idmchina\.net\/ https://www.internetdownloadmanager.com/ 302
+^https?:\/\/(www.)?officesoftcn\.com\/ https://www.microsoft.com/zh-cn/microsoft-365 302
 
 [Script]
 TestFlight = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,script-path=https://raw.githubusercontent.com/Runeston/script/main/TestFlightAccount.js
 YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/Runeston/script/main/youtube.js
+EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/EmbyPremiere.js
 12306开屏 = type=http-response,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/12306.js
 微信公众号 = type=http-response,pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,requires-body=1,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=""advertisement_num":\d,"advertisement_info":\[.+\]->"advertisement_num":0,"advertisement_info":[]",max-size=0
 # 酷安
@@ -91,4 +107,4 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json" header="Content-Type: application/vnd.yt-ump"
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com, api.coolapk.com, games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, api.m.jd.com, app.bilibili.com, graph.facebook.com, *.googlevideo.com, youtubei.googleapis.com, tiebac.baidu.com, testflight.apple.com
+hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com, api.coolapk.com, games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, api.m.jd.com, app.bilibili.com, graph.facebook.com, *.googlevideo.com, youtubei.googleapis.com, tiebac.baidu.com, testflight.apple.com, mb3admin.com, www.google.cn, www.firefox.com.cn
