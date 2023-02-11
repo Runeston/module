@@ -1,0 +1,13 @@
+#!name=❏ 野比合集
+#!desc=高阶脚本
+#!author=@NobyDa
+
+[General]
+skip-proxy = %APPEND% iosapps.itunes.apple.com
+
+[Script]
+TF账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,script-path=https://raw.githubusercontent.com/Runeston/script/main/TestFlightAccount.js
+IPA应用安装 = type=http-request,pattern=^https:\/\/nobyda/(install|download)(\/jsbox)?$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/IPA_install.js
+
+[MITM]
+hostname = %APPEND% testflight.apple.com, nobyda
