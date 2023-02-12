@@ -1,0 +1,21 @@
+#!name=❏ 新浪微博
+#!desc=广告拦截
+#!from=RuCu6
+
+[Script]
+微博页面 = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active|cardlist|comments\/build_comments|profile\/container_timeline|profile\/me|statuses\/extend|statuses\/unread_hot_timeline|video\/tiny_stream_video_list|statuses\/container_timeline(_topic|_unread)|!\/huati\/discovery_home_bottom_channels|search\/container_timeline|search\/finder|searchall|messageflow\/notice|page),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/weibo.js
+微博开屏 = type=http-response,pattern=^https:\/\/(adstrategy\.biz\.weibo\.com\/v2\/strategy\/ad|sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php|wbapp\.uve\.weibo\.com\/wbapplua\/wbpullad\.lua),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/weibo.js
+
+[URL Rewrite]
+# 微博开屏
+^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
+
+[Map Local]
+# 微博信息流
+^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily|!\/huati\/discovery_home_bottom_getdotinfo|!\/live\/media_homelist|photo\/info|!\/multimedia\/playback\/batch_get|!\/huati\/mobile_discovery_searchchange|search\/container_discover|hot\/hours_spotlight|!\/sug\/list\/finderchange) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 微博推广
+^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uuuvead) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+
+[MITM]
+hostname = %APPEND% adstrategy.biz.weibo.com, api.weibo.cn, sdkapp.uve.weibo.com, wbapp.uve.weibo.com, card.weibo.com, weibo.com
