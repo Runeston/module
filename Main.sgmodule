@@ -2,6 +2,10 @@
 #!desc=综合配置
 #!from=many workers
 
+[General]
+# TCP Force HTTP Hosts
+force-http-engine-hosts=%APPEND% hpx.com, www.hpx.com
+
 [Rule]
 # 屏蔽YouTube的udp
 AND,((PROTOCOL,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT-NO-DROP
@@ -31,6 +35,8 @@ URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVe
 URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
 
 [URL Rewrite]
+# 内置模块
+^https?://(|www\.)hpx\.com http://{{{GATEWAY_ADDRESS}}} 302
 # 头条域名
 ^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject
 # 百度网盘
@@ -107,4 +113,4 @@ EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/servi
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json" header="Content-Type: application/vnd.yt-ump"
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com, api.coolapk.com, games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, api.m.jd.com, app.bilibili.com, graph.facebook.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn
+hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, www.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, cn.pornhub.com, api.coolapk.com, games.mobileapi.hupu.com, bbs.mobileapi.hupu.com, api.m.jd.com, app.bilibili.com, graph.facebook.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com
