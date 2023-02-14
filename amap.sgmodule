@@ -31,7 +31,7 @@ URL-REGEX,\/amdc\/mobileDispatch,REJECT
 # 首页天气
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 打车页
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order\/car\/king_toolbox_car_bubble\ data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order\/car\/king_toolbox_car_bubble\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/friendly_information\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 [MITM]
