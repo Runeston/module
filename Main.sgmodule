@@ -5,6 +5,8 @@
 [General]
 # TCP Force HTTP Hosts
 force-http-engine-hosts=%APPEND% hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
+# Skip Proxy Lists
+skip-proxy = %APPEND% www.baidu.com, yunbusiness.ccb.com, www.abchina.com.cn
 
 [Rule]
 # 屏蔽YouTube的udp
