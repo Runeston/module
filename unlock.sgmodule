@@ -1,0 +1,13 @@
+#!name=❏ 解锁内购
+#!desc=获取权益
+#!from=langkhach
+
+[Header Rewrite]
+https:\/\/api\.revenuecat\.com header-del x-revenuecat-etag
+
+[Script]
+Revenuecat = type=http-response,pattern=https:\/\/api\.revenuecat\.com,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Surge-LK/new/scripts/langkhach/revenuecat.js
+Buy = type=http-response,pattern=(^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt|^https:\/\/sk\.ulysses\.app\/api\/v1\/itunes_receipt_verify),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Surge-LK/new/scripts/langkhach/verify_receipt.js
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com, buy.itunes.apple.com
