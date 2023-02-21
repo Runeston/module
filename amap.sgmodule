@@ -30,7 +30,7 @@ amdc\.m\.taobao\.com - reject
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull(_mp)?\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 我的页面
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/usr-profile-fc\/home\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-^https:\/\/sns\.amap\.com\/ws\/userview\/footprint data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+#^https:\/\/sns\.amap\.com\/ws\/userview\/footprint data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 其他拦截
 ^https:\/\/m5\.amap\.com\/ws\/asa\/ads_attribution\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
