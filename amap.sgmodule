@@ -5,33 +5,37 @@
 [URL Rewrite]
 # 屏蔽广告请求
 amdc\.m\.taobao\.com - reject
+# 横幅拦截
+^https:\/\/mps\.amap\.com\/ws\/mps\/scene\? - reject
 
 [Script]
-首页卡片 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-我的卡片 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-首页动图 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-附近页面 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-地点详情页 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-开屏广告 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
-打车卡片 = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js,script-update-interval=-1
+搜索结果= type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/poi\/detail\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+搜索横幅 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_operation_location\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+首页卡片 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+搜索列表 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/mapapi\/poi\/infolite\/\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+首页角落 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+打车页面 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+附近页面 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+开屏广告 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
+低栏打车 = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js
 
 [Map Local]
-# 路线规划
+# 导航页面
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 首页消息横幅
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-assets\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 搜索框热词
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 其他
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(city_feed|tips_adv)\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-(assets|location)\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/m5\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword)\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull(_mp)?\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 我的页面
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/usr-profile-fc\/home\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/sns\.amap\.com\/ws\/userview\/footprint data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 其他拦截
 ^https:\/\/m5\.amap\.com\/ws\/asa\/ads_attribution\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 首页天气
-^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 打车页
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order\/car\/king_toolbox_car_bubble\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order_web\/friendly_information\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 打车页面
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/order(_web\/friendly_information|\/car\/king_toolbox_car_bubble)\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 [MITM]
-hostname = %APPEND% m5.amap.com, m5-zb.amap.com, sns.amap.com
+hostname = %APPEND% m5.amap.com, m5-zb.amap.com, mps.amap.com, sns.amap.com
