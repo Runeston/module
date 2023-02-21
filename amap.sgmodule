@@ -3,6 +3,7 @@
 #!from=RuCu6、Key
 
 [URL Rewrite]
+# 屏蔽广告请求
 amdc\.m\.taobao\.com - reject
 
 [Script]
