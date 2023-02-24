@@ -24,18 +24,18 @@ DOMAIN,mbdp02.bdstatic.com,REJECT-NO-DROP
 DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
 # 虎扑
-DOMAIN,adx.hupu.com
-DOMAIN,adx-api.hupu.com
+DOMAIN,adx.hupu.com,REJECT
+DOMAIN,adx-api.hupu.com,REJECT
 DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 # 新浪
-DOMAIN-SUFFIX,alitui.weibo.com
-DOMAIN-SUFFIX,beacon.sina.com.cn
-DOMAIN,adimg.uve.weibo.com
-DOMAIN,adimg.vue.weibo.com
-DOMAIN,u1.img.mobile.sina.cn
-DOMAIN,sax.sina.com.cn
-DOMAIN,saxs.sina.com.cn
-DOMAIN,saxn.sina.com.cn
+DOMAIN-SUFFIX,alitui.weibo.com,REJECT
+DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
+DOMAIN,adimg.uve.weibo.com,REJECT
+DOMAIN,adimg.vue.weibo.com,REJECT
+DOMAIN,u1.img.mobile.sina.cn,REJECT
+DOMAIN,sax.sina.com.cn,REJECT
+DOMAIN,saxs.sina.com.cn,REJECT
+DOMAIN,saxn.sina.com.cn,REJECT
 # QQ音乐
 DOMAIN,tmead.y.qq.com,REJECT-NO-DROP
 DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
