@@ -1,13 +1,15 @@
 #!name=❏ 酷安社区
 #!desc=广告拦截
-#!from=ddgksf2013
-
-[URL Rewrite]
-# 屏蔽热门搜索
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject
+#!from=RuCu6
 
 [Script]
-酷安去广告 = type=http-response,pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安头条 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安评论 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安热榜 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+
+[Map Local]
+# 酷安热搜
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 [MITM]
 hostname = %APPEND% api.coolapk.com
