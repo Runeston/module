@@ -25,6 +25,10 @@ DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
 # 虎扑
 DOMAIN,goblin.hupu.com,REJECT-NO-DROP
+# QQ音乐
+DOMAIN,tmead.y.qq.com,REJECT-NO-DROP
+DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
+DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 # 京东
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
