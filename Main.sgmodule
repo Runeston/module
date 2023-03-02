@@ -74,10 +74,6 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 ^https?:\/\/(www.)?idmchina\.net\/ https://www.internetdownloadmanager.com/ 302
 ^https?:\/\/(www.)?officesoftcn\.com\/ https://www.microsoft.com/zh-cn/microsoft-365 302
 
-[Header Rewrite]
-# New Bing Ai
-^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent \w+\/[\d\.]+$ "AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
-
 [Script]
 # Individual
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/EmbyPremiere.js
@@ -122,4 +118,4 @@ pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|w
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json" header="Content-Type: application/vnd.yt-ump"
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, games.mobileapi.hupu.com, api.m.jd.com, app.bilibili.com, graph.facebook.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, www.bing.com, *.pornhub.com
+hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, games.mobileapi.hupu.com, api.m.jd.com, app.bilibili.com, graph.facebook.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, *.pornhub.com
