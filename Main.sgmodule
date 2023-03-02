@@ -23,6 +23,7 @@ DOMAIN,mbdp02.bdstatic.com,REJECT-NO-DROP
 # 广告域名
 DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT-NO-DROP
 # 虎扑
 DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 # QQ音乐
