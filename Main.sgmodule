@@ -47,6 +47,8 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 ^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml - reject
 # 彩云天气
 ^https:\/\/cdn-w\.caiyunapp\.com\/p\/app\/activity\/.+\.gif$ - reject
+# B站IP
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 # 得物
 ^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
 # 识货
