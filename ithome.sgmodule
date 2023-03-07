@@ -1,0 +1,13 @@
+#!name=❏ IT之家
+#!desc=拦截广告
+#!from=toulanboy、chouchoui
+
+[URL Rewrite]
+^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject
+^https?:\/\/api\.zuihuimai\.com\/static\/.*\/hongbao - reject
+
+[Script]
+ithome = type=http-response,pattern=^https?:\/\/(api\.ithome\.com\/json\/(((newslist|listpage)\/news)|(slide\/index)))|(napi\.ithome\.com\/api\/news\/index),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/ithome.js,script-update-interval=0
+
+[MITM]
+hostname = %APPEND% api.ithome.com, napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
