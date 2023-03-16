@@ -2,11 +2,9 @@
 #!desc=优化体验
 #!from=RuCu6、Key
 
-[URL Rewrite]
-# 屏蔽广告请求
-^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch - reject
 
 [Script]
+精准屏蔽 = type=http-request,pattern=amdc\.m\.taobao\.com,requires-body=0,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/self_use.js
 首页卡片 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js
 我的卡片 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js
 首页动图 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/amap.js
