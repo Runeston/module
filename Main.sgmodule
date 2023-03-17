@@ -53,7 +53,7 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 百视TV
 ^https:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/free\/open\/advertisingV2 - reject
 # 半月谈
-^https:\/\/www\.banyuetanapp\.com\/byt-api\/ad\/getAdvertList\? - reject
+^https:\/\/www\.banyuetanapp\.com\/byt-api\/ad\/getAdvertList\?adSpaceId=100000002$ - reject
 # 得物
 ^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
 # 识货
