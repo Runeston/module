@@ -1,0 +1,8 @@
+#!name=❏ 解锁模块
+#!desc=破解内购
+
+[Script]
+Cubox = type=http-response,pattern=^https:\/\/cubox\.(pro|cc)\/c\/api\/user(Info|Pay),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/cubox.js
+
+[MITM]
+hostname = %APPEND% cubox.cc
