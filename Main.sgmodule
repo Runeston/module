@@ -40,20 +40,20 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 内置模块
 ^https?://(|www\.)hpx\.com http://{{{GATEWAY_ADDRESS}}} 302
 # 头条域名
-^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject
+^https:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject
 # 百度网盘
 ^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/2\.0\/pcs\/ad) - reject
 # 爱思助手
 ^https?:\/\/list-app-m\.i4\.cn\/getopfstadinfo\.xhtml - reject
 # 彩云天气
-^https?:\/\/cdn-w\.caiyunapp\.com\/p\/app\/activity\/.+\.gif$ - reject
+^https:\/\/cdn-w\.caiyunapp\.com\/p\/app\/activity\/.+\.gif$ - reject
 # 哔哩哔哩
 ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 # 百视TV
-^https?:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/free\/open\/advertisingV2 - reject
+^https:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/free\/open\/advertisingV2 - reject
 # 得物
-^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
+^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
 # 识货
 ^https?:\/\/sh-gateway\.shihuo\.cn\/v\d\/services\/sh-adapi\/home\/(screen|ad) - reject
 # 斗鱼
@@ -61,9 +61,9 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 威锋
 ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) - reject
 # 虎扑
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/hotkeylist\? - reject
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/contentlist\/entrance\/list\? - reject
-^https?:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/competition\/getCompetitionTopicList\? - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/hotkeylist\? - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/contentlist\/entrance\/list\? - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/competition\/getCompetitionTopicList\? - reject
 # 友盟
 ^https?:\/\/ulogs\.umeng\.com - reject
 ^https?:\/\/ulogs\.umengcloud\.com - reject
@@ -96,9 +96,9 @@ pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|w
 双语翻译 = type=http-response,pattern=https:\/\/www.youtube.com\/api\/timedtext.+,requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
 双语设置 = type=http-request,pattern=https:\/\/setting.youtube.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
 # 酷安
-酷安头条 = type=http-response,pattern=^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
-酷安评论 = type=http-response,pattern=^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
-酷安热榜 = type=http-response,pattern=^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安头条 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安评论 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安热榜 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
 # 京东
 京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_price.js
 京东lite开屏 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=jdLiteAdvertisingVO->surge
@@ -121,7 +121,7 @@ pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|w
 ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 ^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # Pornhub优化
-^https?:\/\/(cn|www)\.pornhub\.com\/_xa\/ads data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # Facebook追踪
 ^https:\/\/graph\.facebook\.com\/ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 减少YouTube开销
