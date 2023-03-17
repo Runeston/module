@@ -116,6 +116,8 @@ pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|w
 [Map Local]
 # 酷安热门搜索
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# 半月谈时政
+^https:\/\/www\.banyuetanapp\.com\/byt-api\/ad\?newsChannelId=100000001&spaceType=2$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 中国联通
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 ^https?:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
