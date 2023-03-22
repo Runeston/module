@@ -65,10 +65,9 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 威锋
 ^https?:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList) - reject
 # 虎扑
-^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/hotkeylist\? - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/(hotkeylist|hintkeylist) - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/contentlist\/entrance\/list\? - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/competition\/getCompetitionTopicList\? - reject
-^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/hintkeylist\? - reject
 # 友盟
 ^https?:\/\/ulogs\.umeng\.com - reject
 ^https?:\/\/ulogs\.umengcloud\.com - reject
