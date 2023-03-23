@@ -32,9 +32,6 @@ DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 # 京东
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
 URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
-# 顺丰速运
-URL-REGEX,^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade,REJECT
-URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages,REJECT
 
 [URL Rewrite]
 # 内置模块
@@ -50,6 +47,9 @@ URL-REGEX,https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImag
 # 哔哩哔哩
 ^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+# 顺丰速运
+^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade - reject
+https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 # 起点读书
 ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v4\/client\/getsplashscreen - reject
 # 百视TV
