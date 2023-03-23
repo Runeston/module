@@ -7,11 +7,13 @@ DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
 
-[Map Local]
-# 去除大家都在搜
-^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v\d\/hotkeylist data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 去除热门话题榜(Beta)
-^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+[URL Rewrite]
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/search\/v2\/(hotkeylist|hintkeylist) - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/contentlist\/entrance\/list\? - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bbsallapi\/competition\/getCompetitionTopicList\? - reject
+^https:\/\/more\.mobileapi\.hupu\.com\/api\/discovery\/explore$ - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/user\/setlist\? - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/bplapi\/user\/v1\/getMyCreatorItemInfo\.api\? - reject
 
 [MITM]
-hostname = %APPEND% games.mobileapi.hupu.com, bbs.mobileapi.hupu.com
+hostname = %APPEND% games.mobileapi.hupu.com, more.mobileapi.hupu.com
