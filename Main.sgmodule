@@ -56,6 +56,7 @@ URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotS
 ^https:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/free\/open\/advertisingV2 - reject
 # 半月谈
 ^https:\/\/www\.banyuetanapp\.com\/byt-api\/ad\/getAdvertList\?adSpaceId=100000002$ - reject
+^https:\/\/www\.banyuetanapp\.com\/byt-api\/ad\?newsChannelId=100000001&spaceType=2$ - reject
 # 得物
 ^https:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement\/ - reject
 # 识货
