@@ -106,8 +106,8 @@ pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|w
 酷安热榜 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
 # 京东
 京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_price.js
-京东lite开屏 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=jdLiteAdvertisingVO->surge
-京东lite弹窗 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=pushData->surge
+京东lite开屏 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument=jdLiteAdvertisingVO->surge
+京东lite弹窗 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument=pushData->surge
 # 哔哩哔哩
 我的页面处理 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
 解锁会员画质 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
