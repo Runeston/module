@@ -29,9 +29,6 @@ DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 # QQ音乐
 DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
 DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
-# 京东
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
 
 [URL Rewrite]
 # 内置模块
@@ -117,6 +114,9 @@ pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|w
 贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/tieba-proto.js
 
 [Map Local]
+# 京东
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
 # 酷安热门搜索
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 半月谈时政
