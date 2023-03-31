@@ -121,9 +121,9 @@ pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|w
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
 # 虎扑热榜
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 酷安热门搜索
+# 酷安热搜
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# 半月谈时政
+# 半月谈
 ^https:\/\/www\.banyuetanapp\.com\/byt-api\/ad\?newsChannelId=100000001&spaceType=2$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 中国联通
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
