@@ -16,4 +16,4 @@ DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT-NO-DROP
 
 
 [MITM]
-hostname = %APPEND% games.mobileapi.hupu.com, more.mobileapi.hupu.com, fairy.mobileapi.hupu.com, bbs.mobileapi.hupu.com
+hostname = %APPEND% *.mobileapi.hupu.com
