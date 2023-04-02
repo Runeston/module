@@ -14,6 +14,5 @@ DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT-NO-DROP
 ^https:\/\/more\.mobileapi\.hupu\.com\/api\/discovery\/(explore|resource) - reject
 ^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/my\/recommendExpertList - reject
 
-
 [MITM]
 hostname = %APPEND% *.mobileapi.hupu.com
