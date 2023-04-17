@@ -96,7 +96,7 @@ BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),requires-b
 微信公众号 = type=http-response,pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,requires-body=1,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument=""advertisement_num":\d,"advertisement_info":\[.+\]->"advertisement_num":0,"advertisement_info":[]",max-size=0
 pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|www)\.pornhub\.com(\/?$|\/([?]|view|video).*$),script-path=https://raw.githubusercontent.com/chengkongyiban/shadowrocket/main/scripts/pornhub.js
 # YouTube
-解锁权限 = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/Runeston/script/main/youtube.js
+解锁权限 = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.beta.js
 双语翻译 = type=http-response,pattern=https:\/\/www.youtube.com\/api\/timedtext.+,requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
 双语设置 = type=http-request,pattern=https:\/\/setting.youtube.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
 # 酷安
