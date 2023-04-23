@@ -68,6 +68,7 @@ DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/(search\/v2\/(hotkeylist|hintkeylist)|bbsallapi\/contentlist\/entrance\/list|bbsallapi\/competition\/getCompetitionTopicList|user\/setlist|bplapi\/user\/v1\/getMyCreatorItemInfo\.api) - reject
 ^https:\/\/more\.mobileapi\.hupu\.com\/api\/discovery\/(explore|resource) - reject
 ^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/my\/recommendExpertList - reject
+^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/lego\/data - reject
 # 友盟
 ^https?:\/\/ulogs\.umeng\.com - reject
 ^https?:\/\/ulogs\.umengcloud\.com - reject
