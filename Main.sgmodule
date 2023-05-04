@@ -42,8 +42,9 @@ DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 # 彩云天气
 ^https:\/\/cdn-w\.caiyunapp\.com\/p\/app\/activity\/.+\.gif$ - reject
 # 哔哩哔哩
-^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
-^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/Default - reject
+^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v1\.Dynamic\/DynRed - reject
+^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 # 顺丰速运
 ^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade - reject
 ^https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
