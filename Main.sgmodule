@@ -1,6 +1,6 @@
 #!name=❏ 脚本合集
 #!desc=综合配置
-#!from=many workers
+#!from=Many workers
 
 [General]
 # TCP Force HTTP Hosts
