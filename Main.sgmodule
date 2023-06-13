@@ -95,7 +95,7 @@ EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/servi
 Cubox = type=http-response,pattern=^https:\/\/cubox\.(pro|cc)\/c\/api\/user(Info|Pay),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/cubox.js
 BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),requires-body=1,timeout=120,max-size=0,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
 12306开屏 = type=http-request,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/12306.js
-微信公众号 = type=http-response,pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad,requires-body=1,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js,argument=""advertisement_num":\d,"advertisement_info":\[.+\]->"advertisement_num":0,"advertisement_info":[]",max-size=0
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
 pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|www)\.pornhub\.com(\/?$|\/([?]|view|video).*$),script-path=https://raw.githubusercontent.com/chengkongyiban/shadowrocket/main/scripts/pornhub.js
 # YouTube
 解锁权限 = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.beta.js
