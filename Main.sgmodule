@@ -42,6 +42,7 @@ DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 # 彩云天气
 ^https:\/\/cdn-w\.caiyunapp\.com\/p\/app\/activity\/.+\.gif$ - reject
 # 顺丰速运
+^https?:\/\/shopic\.sf-express\.com\/crm\/mobile\/common\/flashscreen - reject
 ^https?:\/\/ccsp-egmas\.sf-express\.com\/cx-app-base\/base\/app\/appVersion\/detectionUpgrade - reject
 ^https?://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 # 起点读书
@@ -95,6 +96,7 @@ BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),requires-b
 12306开屏 = type=http-request,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/12306.js
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
 pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|www)\.pornhub\.com(\/?$|\/([?]|view|video).*$),script-path=https://raw.githubusercontent.com/chengkongyiban/shadowrocket/main/scripts/pornhub.js
+shunfeng_json = type=http-response,pattern=https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryInfoFlow,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/shunfeng_json.js
 # YouTube
 解锁权限 = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.beta.js
 双语翻译 = type=http-response,pattern=https:\/\/www.youtube.com\/api\/timedtext.+,requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
