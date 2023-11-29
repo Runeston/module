@@ -122,7 +122,7 @@ Vvebo_response = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profil
 [Map Local]
 # 京东
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords|searchBoxWord|stationPullService|uniformRecommend) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
 # 虎扑热榜
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 酷安热搜
