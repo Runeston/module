@@ -10,10 +10,12 @@ DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT-NO-DROP
 
 [URL Rewrite]
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/(search\/v2\/(hotkeylist|hintkeylist)|bbsallapi\/contentlist\/entrance\/list|bbsallapi\/competition\/getCompetitionTopicList|user\/setlist|bplapi\/user\/v1\/getMyCreatorItemInfo\.api) - reject
-^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) - reject
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/lego\/data - reject
 ^https:\/\/more\.mobileapi\.hupu\.com\/api\/discovery\/(explore|resource) - reject
 ^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/my\/recommendExpertList - reject
+
+[Map Local]
+^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 [MITM]
 hostname = %APPEND% *.mobileapi.hupu.com

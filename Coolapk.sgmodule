@@ -8,7 +8,6 @@
 酷安热榜 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
 
 [Map Local]
-# 酷安热搜
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 
 [MITM]

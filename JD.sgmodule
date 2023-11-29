@@ -1,17 +1,16 @@
-#!name=❏ 京东集团
+#!name=❏ 京东优化
 #!desc=广告拦截
 #!from=Mutu、RuCu6
 
-[Rule]
-# 屏蔽京东开屏
-URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts),REJECT-TINYGIF
-# 屏蔽京东系热搜(Beta)
-URL-REGEX,^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords),REJECT-TINYGIF
-
 [Script]
 京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/Runeston/script/main/jd_price.js,script-update-interval=-1
+界面精简 = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jd.js
 京东lite开屏 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=jdLiteAdvertisingVO->surge
 京东lite弹窗 = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/replace-body.js,argument=pushData->surge
+
+[Map Local]
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords|searchBoxWord|stationPullService) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
 
 [MITM]
 hostname = %APPEND% api.m.jd.com
