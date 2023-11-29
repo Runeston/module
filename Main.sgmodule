@@ -29,10 +29,6 @@ DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 # QQ音乐
 DOMAIN,ad.tencentmusic.com,REJECT-NO-DROP
 DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
-# 腾讯视频
-URL-REGEX,^https:\/\/ossgw\.alicdn\.com\/creatives-assets/prod/feupload/user,REJECT
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve
-OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-DROP
 
 [URL Rewrite]
 # 内置模块
@@ -146,4 +142,4 @@ Vvebo_response = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profil
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json" header="Content-Type: application/vnd.yt-ump"
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, api.weibo.cn, list-app-m.i4.cn, api.wfdata.club, ossgw.alicdn.com, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, *.mobileapi.hupu.com, api.m.jd.com, cubox.cc, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, *.pornhub.com, bp-api.bestv.com.cn, www.banyuetanapp.com, magev6.if.qidian.com, api.gongkaoleida.com, api1.zongheng.com, app.10099.com.cn
+hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, api.weibo.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, *.mobileapi.hupu.com, api.m.jd.com, cubox.cc, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, *.pornhub.com, bp-api.bestv.com.cn, www.banyuetanapp.com, magev6.if.qidian.com, api.gongkaoleida.com, api1.zongheng.com, app.10099.com.cn
