@@ -92,6 +92,7 @@ DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 # Individual
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/EmbyPremiere.js
 Cubox = type=http-response,pattern=^https:\/\/cubox\.(pro|cc)\/c\/api\/user(Info|Pay),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/cubox.js
+baiduCloud = type=http-response,pattern=^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduCloud.js
 BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),requires-body=1,timeout=120,max-size=0,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
 12306开屏 = type=http-request,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/12306.js
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
