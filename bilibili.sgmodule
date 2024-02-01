@@ -9,7 +9,7 @@
 
 [Script]
 我的页面处理 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
-# 解锁会员画质 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
+解锁会员画质 = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
 去除热搜发现 = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js
 bilibili.helper.v2 = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/(splash|search\?|feed\/index),requires-body=1,max-size=-1,binary-body-mode=0,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/dist/bilibili.helper.v2.beta.js
 bilibili.helper.dmView = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/dist/bilibili.helper.beta.js
