@@ -3,12 +3,12 @@
 #!from=Runeston
 
 [Rule]
-DOMAIN,goblin.hupu.com,REJECT-NO-DROP
 DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
 DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT-NO-DROP
 
 [URL Rewrite]
+^https:\/\/goblin\.hupu\.com\/.+\/interfaceAd\/getOther - reject
 ^https:\/\/games\.mobileapi\.hupu\.com\/.+\/(search\/v2\/(hotkeylist|hintkeylist)|bbsallapi\/contentlist\/entrance\/list|bbsallapi\/competition\/getCompetitionTopicList|user\/setlist|bplapi\/user\/v1\/getMyCreatorItemInfo\.api) - reject
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/lego\/data - reject
 ^https:\/\/more\.mobileapi\.hupu\.com\/api\/discovery\/(explore|resource) - reject
