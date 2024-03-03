@@ -11,6 +11,7 @@ skip-proxy = %APPEND% www.baidu.com, yunbusiness.ccb.com, www.abchina.com.cn, ba
 [Rule]
 # 屏蔽YouTube的udp
 AND,((PROTOCOL,UDP),(DOMAIN-SUFFIX,googlevideo.com)),REJECT-NO-DROP
+AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 # 拦截贴吧dns解析
 DOMAIN,180.76.76.200,REJECT-DROP
 IP-CIDR,180.76.76.200/32,REJECT-DROP,no-resolve
@@ -104,8 +105,8 @@ fenbi = type=http-response,pattern=^https:\/\/tiku\.fenbi\.com\/activity\/app\/l
 Vvebo-request = type=http-request,pattern=^https:\/\/api\.weibo\.cn\/2\/(users\/show\?|statuses\/user_timeline\?),requires-body=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/vvebo.js
 Vvebo_response = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?,requires-body=1,script-path=https://raw.githubusercontent.com/Runeston/script/main/vvebo.js
 # YouTube
-youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.beta.js
-youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.beta.js
+youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js
+youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"immersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
 双语翻译 = type=http-response,pattern=https:\/\/www.youtube.com\/api\/timedtext.+,requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
 双语设置 = type=http-request,pattern=https:\/\/setting.youtube.com\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
 # Spotify
@@ -143,7 +144,7 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 # Pornhub优化
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
 # 减少YouTube开销
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json" header="Content-Type: application/vnd.yt-ump"
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/blank.txt"
 
 [MITM]
 hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, api.weibo.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, *.mobileapi.hupu.com, api.m.jd.com, cubox.cc, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, *.pornhub.com, bp-api.bestv.com.cn, www.banyuetanapp.com, magev6.if.qidian.com, api.gongkaoleida.com, api1.zongheng.com, app.10099.com.cn, tiku.fenbi.com, goblin.hupu.com, client.app.coc.10086.cn
