@@ -24,7 +24,7 @@ DOMAIN,appcloud2.in.zhihu.com,REJECT
 # 屏蔽下发的配置，如皮肤等
 ^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data-type=text data="{}" status-code=200 header="Content-Type: application/x-protobuf"
 # 屏蔽我的页面开通会员的卡片
-^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data-type=text data=" " status-code=200
 # 去除底部标签页关注人角标
 ^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data-type=text data="{}" status-code=200
 # 去除消息通知角标
