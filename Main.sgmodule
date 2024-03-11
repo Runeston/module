@@ -136,15 +136,15 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 # 半月谈
 ^https:\/\/www\.banyuetanapp\.com\/byt-api\/ad\?newsChannelId=100000001&spaceType=2$ data-type=text data="{}" status-code=200
 # 中国联通
-^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-^https?:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm$ data-type=text data=" " status-code=200
+^https?:\/\/m\.client\.10010\.com\/mobileserviceimportant\/tyfbSearch\/searchHotResult\? data-type=text data=" " status-code=200
 # 菜鸟裹裹
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
-^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn data-type=text data=" " status-code=200
+^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword data-type=text data=" " status-code=200
 # Pornhub优化
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads data-type=text data="{}" status-code=200
 # 减少YouTube开销
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/blank.txt"
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="0" status-code=200
 
 [MITM]
 hostname = %APPEND% mp.weixin.qq.com, ad.12306.cn, api.weibo.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, *.mobileapi.hupu.com, api.m.jd.com, cubox.cc, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, setting.youtube.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, *.pornhub.com, bp-api.bestv.com.cn, www.banyuetanapp.com, magev6.if.qidian.com, api.gongkaoleida.com, api1.zongheng.com, app.10099.com.cn, tiku.fenbi.com, goblin.hupu.com, client.app.coc.10086.cn
