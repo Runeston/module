@@ -127,8 +127,8 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 
 [Map Local]
 # 京东
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords|searchBoxWord|stationPullService) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-img.gif"
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts) data-type=tiny-gif status-code=200
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms|lite_hotWords|searchBoxWord|stationPullService) data-type=tiny-gif status-code=200
 # 虎扑热榜
 ^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data-type=text data="{}" status-code=200
 # 酷安热搜
