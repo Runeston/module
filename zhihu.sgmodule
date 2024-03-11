@@ -18,33 +18,33 @@ DOMAIN,appcloud2.in.zhihu.com,REJECT
 
 [Map Local]
 # 拦截DNS解析
-^https?:\/\/118\.89\.204\.198 data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-^https?:\/\/103\.41\.167\.237 data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/118\.89\.204\.198 data-type=text data="{}" status-code=200
+^https?:\/\/103\.41\.167\.237 data-type=text data="{}" status-code=200
+^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 data-type=text data="{}" status-code=200
 # 屏蔽下发的配置，如皮肤等
-^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json" header="Content-Type: application/x-protobuf"
+^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data-type=text data="{}" status-code=200 header="Content-Type: application/x-protobuf"
 # 屏蔽我的页面开通会员的卡片
 ^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data="https://raw.githubusercontent.com/Runeston/script/main/reject-200.txt"
 # 去除底部标签页关注人角标
-^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data-type=text data="{}" status-code=200
 # 去除消息通知角标
-^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count) data-type=text data="{}" status-code=200
 # 拦截回答下的卡片广告
-^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers\/\d+\/recommendations data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers\/\d+\/recommendations data-type=text data="{}" status-code=200
 # 拦截应用内弹窗
-^https?:\/\/api\.zhihu\.com\/me\/guides data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/me\/guides data-type=text data="{}" status-code=200
 # 去除关注页最常访问
-^https?:\/\/api\.zhihu\.com\/moments\/recent data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/moments\/recent data-type=text data="{}" status-code=200
 # 拦截推荐页顶部广告
-^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config data-type=text data="{}" status-code=200
 # 底栏加号的广告
-^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data-type=text data="{}" status-code=200
 # 推荐页搜索栏左侧图标
-^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading data-type=text data="{}" status-code=200
 # 疑似推荐页内容更新红点
-^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config data-type=text data="{}" status-code=200
 # 暂不清楚作用
-^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner data-type=text data="{}" status-code=200
 
 [Script]
 处理用户信息 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/people\/,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
