@@ -1,8 +1,9 @@
 #!name=❏ 野比合集
 #!desc=高阶脚本
 #!author=@NobyDa
-#!arguments=请求超时:30,列表缓存:0
-#!arguments-desc=请求超时：单位秒\n列表缓存：1/0，分别为开启/关闭
+#!arguments=请求超时:30,启用缓存:1,使用iOS列表:0,调试模式:0
+#!arguments-desc=请求超时：单位：秒。默认30秒。\n\n启用缓存：1/0，开启/关闭，默认开启。用于缓存APP列表，改善列表页面加载过慢。一般与"请求超时"配合使用，开启缓存并刷新列表后，可适当调小超时。\n\n使用iOS列表：1/0，开启/关闭。强制使用iOS应用列表，用于改善 macOS TestFlight 加载过慢。iOS用户无需开启。\n\n调试模式：1/0，开启/关闭。用于调试脚本。
+
 
 [General]
 skip-proxy = %APPEND% iosapps.itunes.apple.com
@@ -12,7 +13,7 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 ^https:\/\/www\.bing\.com\/search header-replace User-Agent "Mozilla/5.0 (iphone; Intel Mac OS X 10_12_6) AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
 
 [Script]
-TF账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,timeout=180,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js, argument="timeout={{{请求超时}}}&enableCache={{{列表缓存}}}"
+TF账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,timeout=180,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js,debug={{{调试模式}}},argument="timeout={{{请求超时}}}&enableCache={{{启用缓存}}}&forceIOSlist={{{使用iOS列表}}}&debug={{{调试模式}}}",engine=auto
 IPA Installer = type=http-request,pattern=^https:\/\/nobyda.app/(install|download),requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/IPA-Installer/IPA-Installer.js
 
 [MITM]
