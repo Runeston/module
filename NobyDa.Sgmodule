@@ -12,7 +12,7 @@ skip-proxy = %APPEND% iosapps.itunes.apple.com
 ^https:\/\/www\.bing\.com\/search header-replace User-Agent "Mozilla/5.0 (iphone; Intel Mac OS X 10_12_6) AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
 
 [Script]
-TF账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,timeout=180,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js,debug={{{调试模式}}},argument="timeout={{{请求超时}}}&enableCache={{{启用缓存}}}&forceIOSlist={{{使用iOS列表}}}&debug={{{调试模式}}}",engine={{{脚本引擎}}}
+#TF账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,timeout=180,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js,debug={{{调试模式}}},argument="timeout={{{请求超时}}}&enableCache={{{启用缓存}}}&forceIOSlist={{{使用iOS列表}}}&debug={{{调试模式}}}",engine={{{脚本引擎}}}
 IPA Installer = type=http-request,pattern=^https:\/\/nobyda.app/(install|download),requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/IPA-Installer/IPA-Installer.js
 
 [MITM]
