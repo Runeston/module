@@ -15,6 +15,10 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 # 拦截贴吧dns解析
 DOMAIN,180.76.76.200,REJECT-DROP
 IP-CIDR,180.76.76.200/32,REJECT-DROP,no-resolve
+# 腾讯视频 去开屏
+URL-REGEX,^https:\/\/ossgw\.alicdn\.com\/creatives-assets/prod/feupload/user,REJECT
+IP-CIDR,47.110.187.87/32,REJECT,no-resolve
+OR,((DOMAIN,pgdt.gtimg.cn), (AND,((USER-AGENT,live4iphoneRel*), (IP-CIDR,0.0.0.0/0,no-resolve)))),REJECT-DROP
 # 12306修正
 DOMAIN,ad.12306.cn,DIRECT
 # 彩云天气
@@ -145,4 +149,4 @@ Vvebo_response = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profil
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = %APPEND% mp.weixin.qq.com, *.cyapi.cn, ad.12306.cn, api.weibo.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, *.mobileapi.hupu.com, api.m.jd.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, *.pornhub.com, bp-api.bestv.com.cn, www.banyuetanapp.com, magev6.if.qidian.com, api.gongkaoleida.com, api1.zongheng.com, app.10099.com.cn, tiku.fenbi.com, goblin.hupu.com, client.app.coc.10086.cn, magev6.if.qidian.com
+hostname = %APPEND% mp.weixin.qq.com, *.cyapi.cn, ad.12306.cn, api.weibo.cn, list-app-m.i4.cn, api.wfdata.club, m.client.10010.com, sh-gateway.shihuo.cn, app.dewu.com, ccsp-egmas.sf-express.com, rtbapi.douyucdn.cn, cn-acs.m.cainiao.com, pan.baidu.com, api.coolapk.com, *.mobileapi.hupu.com, api.m.jd.com, tiebac.baidu.com, mb3admin.com, www.google.cn, www.firefox.com.cn, hpx.com, www.hpx.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, cdn-w.caiyunapp.com, *.pornhub.com, bp-api.bestv.com.cn, www.banyuetanapp.com, magev6.if.qidian.com, api.gongkaoleida.com, api1.zongheng.com, app.10099.com.cn, tiku.fenbi.com, goblin.hupu.com, client.app.coc.10086.cn, ossgw.alicdn.com, magev6.if.qidian.com
