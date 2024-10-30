@@ -7,19 +7,19 @@
 
 [Script]
 # 开屏去广告
-smzdm = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/smzdm.js
+smzdm = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
 # 百科去广告
-smzdm = type=http-response,pattern=^https:\/\/baike-api\.smzdm\.com\/home_v3\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/smzdm.js
+smzdm = type=http-response,pattern=^https:\/\/baike-api\.smzdm\.com\/home_v3\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
 # 好价去广告
-smzdm = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/smzdm.js
+smzdm = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
 # 好价详情页去广告
-smzdm = type=http-response,pattern=^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/smzdm.js
+smzdm = type=http-response,pattern=^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
 # 首页去广告
-smzdm = type=http-response,pattern=^https:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/smzdm.js
+smzdm = type=http-response,pattern=^https:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
 # 搜索标签去广告,搜索结果去广告
-smzdm = type=http-response,pattern=^https:\/\/s-api\.smzdm\.com\/sou\/(filter\/tags\/hot_tags|list_v10),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/smzdm.js
+smzdm = type=http-response,pattern=^https:\/\/s-api\.smzdm\.com\/sou\/(filter\/tags\/hot_tags|list_v10),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
 # 值会员权益中心banner广告
-smzdm = type=http-response,pattern=^https:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/smzdm.js
+smzdm = type=http-response,pattern=^https:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
 
 [MITM]
 hostname = %APPEND% app-api.smzdm.com, baike-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, homepage-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
