@@ -97,7 +97,7 @@ DOMAIN,adstats.tencentmusic.com,REJECT-NO-DROP
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/EmbyPremiere.js
 baiduCloud = type=http-response,pattern=^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/baiducloud.js
 BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),requires-body=1,timeout=120,max-size=0,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
-12306开屏 = type=http-request,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/12306.js
+12306开屏 = type=http-request,pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/12306.js
 pornhub = type=http-response,requires-body=1,max-size=0,pattern=^https?:/\/(cn|www)\.pornhub\.com(\/?$|\/([?]|view|video).*$),script-path=https://raw.githubusercontent.com/chengkongyiban/shadowrocket/main/scripts/pornhub.js
 shunfeng_json = type=http-response,pattern=https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryInfoFlow,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/shunfeng_json.js
 fenbi = type=http-response,pattern=^https:\/\/tiku\.fenbi\.com\/activity\/app\/launcher\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/fenbi.js
