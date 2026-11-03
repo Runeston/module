@@ -1,5 +1,5 @@
-#!name=bilibili
-#!desc=bilibili
+#!name=❏ 哔哩哔哩
+#!desc=广告拦截
 
 [Rule]
 DOMAIN-WILDCARD,*pcdn*.biliapi.net,REJECT
