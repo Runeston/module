@@ -1,0 +1,83 @@
+#!name=boxjs
+#!desc=boxjs
+
+
+[Rule]
+# 拦截DNS解析
+DOMAIN,180.76.76.200,REJECT-DROP
+IP-CIDR,180.76.76.200/32,REJECT-DROP,no-resolve
+# 字节
+DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT-NO-DROP
+
+
+[URL Rewrite]
+^https:\/\/goblin\.hupu\.com\/.+\/interfaceAd\/getOther - reject
+^https:\/\/games\.mobileapi\.hupu\.com\/.+\/(search\/v2\/(hotkeylist|hintkeylist)|bbsallapi\/contentlist\/entrance\/list|bbsallapi\/competition\/getCompetitionTopicList|user\/setlist|bplapi\/user\/v1\/getMyCreatorItemInfo\.api) - reject
+^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/lego\/data - reject
+^https:\/\/more\.mobileapi\.hupu\.com\/api\/discovery\/(explore|resource) - reject
+^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/my\/recommendExpertList - reject
+^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(?:other|user_related|wiki_related)_modul - reject
+
+
+
+[Body Rewrite]
+http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["reskinConfig"],["sidebarExSquareStyle","moreList"],["sidebarExSquareStyle","topList"]]) | .sidebarExSquareStyle.commonlyUsedList |= map(select(.title == "设置" or .title == "历史记录" or .title == "草稿箱" or .title == "我的钱包" or .title == "小程序" or .title == "未成年人模式" or .title == "官方客服" or .title == "内容偏好" or .title == "离线模式" or .title == "稍后再看" or .title == "举报中心" or .title == "挂件"))'
+http-response-jq ^https:\/\/(?:apissl|az\d-live|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/live\/feed\/square\/refresh\? 'delpaths([["data","banners"]])'
+http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/feed\/(?:selection|selectionFast)\? 'if (.feeds | type) == "array" then .feeds |= map(select(.ad | not)) else . end'
+http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/user\/profile\/v2\? 'delpaths([["postRecommends"]])'
+http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/im\/wd\/top\/navigation\/getRecommendedSession\? 'delpaths([["data","operationRecommendationList"]])'
+
+
+[Map Local]
+^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+# > 右下角悬浮推广
+^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/nearby\/widget\/info\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# > 任务中心上报
+^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/taskCenter\/task\/report\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# > 广告接口
+^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# > 直播卡片
+^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/live\/feed\/info\/simplelive\/card\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
+
+
+[Script]
+# Vvebo
+vvebo = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/users\/show\?, script-path=https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js, timeout=60
+vvebo = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, script-path=https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js, timeout=60
+vvebo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, script-path=https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js, requires-body=true, max-size=-1, timeout=60
+
+# Boxjs
+chavy.boxjs = type=http-request, pattern=^https?:\/\/(.+\.)?boxjs\.(com|net), script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, max-size=-1, timeout=60
+
+# 百度贴吧
+贴吧json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
+贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
+# 开屏去广告
+smzdm = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
+# 百科去广告
+smzdm = type=http-response,pattern=^https:\/\/baike-api\.smzdm\.com\/home_v3\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
+# 好价去广告
+smzdm = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
+# 好价详情页去广告
+smzdm = type=http-response,pattern=^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
+# 首页去广告
+smzdm = type=http-response,pattern=^https:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
+# 搜索标签去广告,搜索结果去广告
+smzdm = type=http-response,pattern=^https:\/\/s-api\.smzdm\.com\/sou\/(filter\/tags\/hot_tags|list_v10),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
+# 值会员权益中心banner广告
+smzdm = type=http-response,pattern=^https:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
+酷安头条 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安评论 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+酷安热榜 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+
+
+
+[MITM]
+hostname = %APPEND% api.weibo.cn, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, tiebac.baidu.com, *.mobileapi.hupu.com, apissl.gifshow.com, apissl.ksapisrv.com, az*-api.ksapisrv.com, az*-api-idc.ksapisrv.com, az*-api-js.gifshow.com, az*-live.ksapisrv.com, app-api.smzdm.com, baike-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, homepage-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, api.coolapk.com
