@@ -1,83 +1,46 @@
-#!name=boxjs
-#!desc=boxjs
+#!name=❏ 哔哩优化
+#!desc=高级设置
+#!author=VirgilClyne[https://github.com/VirgilClyne]
+#!icon=https://github.com/BiliUniverse/Redirect/raw/main/src/assets/icon_rounded.png
+#!openUrl=http://boxjs.com/#/app/BiliBili.Redirect
+#!homepage=https://Redirect.BiliUniverse.io
+#!date=2025-06-07 13:38:04
+#!version=0.2.18
+#!arguments-desc=Host.Akamaized: [主机名] 重定向 Akamaized CDN (港澳台)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 Akamaized 要重定向的主机名。\n\nHost.BStar: [主机名] 重定向 BStar CDN (国际版)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 BStar 要重定向的主机名。\n\nHost.PCDN: [主机名] 重定向 PCDN 主机名 (中国大陆)\n    ├ upos-sz-mirrorali.bilivideo.com: 阿里云 CDN\n    ├ upos-sz-mirrorcos.bilivideo.com: 腾讯云 CDN\n    ├ upos-sz-mirrorhw.bilivideo.com: 华为云 CDN，融合 CDN\n    ├ upos-sz-mirroraliov.bilivideo.com: 阿里云 CDN，海外\n    ├ upos-sz-mirrorcosov.bilivideo.com: 腾讯云 CDN，海外\n    └ upos-sz-mirrorhwov.bilivideo.com: 华为云 CDN，海外\n请选择 PCDN 要重定向的主机名。\n\nHost.MCDN: [主机名] 重定向 MCDN 主机名 (中国大陆)\n    └ proxy-tf-all-ws.bilivideo.com: proxy-tf-all-ws.bilivideo.com\n请选择 MCDN 要重定向的主机名。\n\nLogLevel: [调试] 日志等级\n    ├ OFF: 关闭\n    ├ ERROR: ❌ 错误\n    ├ WARN: ⚠️ 警告\n    ├ INFO: ℹ️ 信息\n    ├ DEBUG: 🅱️ 调试\n    └ ALL: 全部\n选择脚本日志的输出等级，低于所选等级的日志将全部输出。\n
+#!arguments=Host.Akamaized:upos-sz-mirrorali.bilivideo.com,Host.BStar:upos-sz-mirrorali.bilivideo.com,Host.PCDN:upos-sz-mirrorali.bilivideo.com,Host.MCDN:proxy-tf-all-ws.bilivideo.com,LogLevel:WARN
 
+[General]
+force-http-engine-hosts = %APPEND% *:4480, *:4483, *:8000, *:8082, *:9102
 
 [Rule]
-# 拦截DNS解析
-DOMAIN,180.76.76.200,REJECT-DROP
-IP-CIDR,180.76.76.200/32,REJECT-DROP,no-resolve
-# 字节
-DOMAIN,pangolin.snssdk.com,REJECT-NO-DROP
-DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT-NO-DROP
-DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT-NO-DROP
-
+DOMAIN-WILDCARD,*pcdn*.biliapi.net,REJECT
 
 [URL Rewrite]
-^https:\/\/goblin\.hupu\.com\/.+\/interfaceAd\/getOther - reject
-^https:\/\/games\.mobileapi\.hupu\.com\/.+\/(search\/v2\/(hotkeylist|hintkeylist)|bbsallapi\/contentlist\/entrance\/list|bbsallapi\/competition\/getCompetitionTopicList|user\/setlist|bplapi\/user\/v1\/getMyCreatorItemInfo\.api) - reject
-^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/lego\/data - reject
-^https:\/\/more\.mobileapi\.hupu\.com\/api\/discovery\/(explore|resource) - reject
-^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/my\/recommendExpertList - reject
-^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(?:other|user_related|wiki_related)_modul - reject
-
-
-
-[Body Rewrite]
-http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["reskinConfig"],["sidebarExSquareStyle","moreList"],["sidebarExSquareStyle","topList"]]) | .sidebarExSquareStyle.commonlyUsedList |= map(select(.title == "设置" or .title == "历史记录" or .title == "草稿箱" or .title == "我的钱包" or .title == "小程序" or .title == "未成年人模式" or .title == "官方客服" or .title == "内容偏好" or .title == "离线模式" or .title == "稍后再看" or .title == "举报中心" or .title == "挂件"))'
-http-response-jq ^https:\/\/(?:apissl|az\d-live|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/live\/feed\/square\/refresh\? 'delpaths([["data","banners"]])'
-http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/feed\/(?:selection|selectionFast)\? 'if (.feeds | type) == "array" then .feeds |= map(select(.ad | not)) else . end'
-http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/user\/profile\/v2\? 'delpaths([["postRecommends"]])'
-http-response-jq ^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/im\/wd\/top\/navigation\/getRecommendedSession\? 'delpaths([["data","operationRecommendationList"]])'
-
-
-[Map Local]
-^https:\/\/bbs\.mobileapi\.hupu\.com\/.+\/bbsallapi\/tag\/v\d\/(heatTag|weiboHeatTag) data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-# > 右下角悬浮推广
-^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/nearby\/widget\/info\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-# > 任务中心上报
-^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/taskCenter\/task\/report\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-# > 广告接口
-^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-# > 直播卡片
-^https:\/\/(?:apissl|az\d-api(?:-js|-idc)?)\.(?:gifshow|ksapisrv)\.com\/rest\/n\/live\/feed\/info\/simplelive\/card\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/Runeston/script/main/reject-dict.json"
-
+# 拦截搜索默认词、动态红点、IP 资源
+^https:\/\/(?:(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(?:interface\.v1\.Search\/Default|dynamic\.v1\.Dynamic\/DynRed)|app\.bilibili\.com\/x\/resource\/ip) - reject
 
 [Script]
-# Vvebo
-vvebo = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/users\/show\?, script-path=https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js, timeout=60
-vvebo = type=http-request, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/user_timeline\?, script-path=https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js, timeout=60
-vvebo = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/statuses\/tab\?, script-path=https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js, requires-body=true, max-size=-1, timeout=60
+# 我的页面处理
+bilibili_json = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine, script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/bilibili_json.js, requires-body=true, max-size=-1, timeout=60
 
-# Boxjs
-chavy.boxjs = type=http-request, pattern=^https?:\/\/(.+\.)?boxjs\.(com|net), script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, max-size=-1, timeout=60
+# 去除热搜发现
+bilibili = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?, script-path=https://raw.githubusercontent.com/Runeston/script/main/bilibili.js, requires-body=true, max-size=-1, timeout=60
 
-# 百度贴吧
-贴吧json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js
-贴吧proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js
-# 开屏去广告
-smzdm = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
-# 百科去广告
-smzdm = type=http-response,pattern=^https:\/\/baike-api\.smzdm\.com\/home_v3\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
-# 好价去广告
-smzdm = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
-# 好价详情页去广告
-smzdm = type=http-response,pattern=^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
-# 首页去广告
-smzdm = type=http-response,pattern=^https:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
-# 搜索标签去广告,搜索结果去广告
-smzdm = type=http-response,pattern=^https:\/\/s-api\.smzdm\.com\/sou\/(filter\/tags\/hot_tags|list_v10),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
-# 值会员权益中心banner广告
-smzdm = type=http-response,pattern=^https:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/refs/heads/main/smzdm.js
-酷安头条 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
-酷安评论 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
-酷安热榜 = type=http-response,pattern=^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Runeston/script/main/Kuan.js
+# 开屏 / 搜索 / 信息流处理
+bilibili.helper.v2 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/(?:splash|search\?|feed\/index), script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.v2.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
 
+# gRPC 处理
+bilibili.helper = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/(?:bilibili\.community\.service\.dm\.v1\.DM\/DmView|bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus|bilibili\.app\.(?:view|viewunite)\.v1\.View\/(?:View|ViewProgress)|bilibili\.main\.community\.reply\.v1\.Reply\/MainList|bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll|bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll)$, script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Bilibili/bilibili.helper.js, requires-body=true, binary-body-mode=true, max-size=-1, timeout=60
 
+📺 BiliBili.Redirect.CDN.upgcxcode.m4s = type=http-request, pattern=^https?:\/\/.+\.bilivideo\.com\/upgcxcode\/, script-path=https://github.com/BiliUniverse/Redirect/releases/download/v0.2.18/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
+
+📺 BiliBili.Redirect.MCDN.v1.resource.m4s = type=http-request, pattern=^https?:\/\/[adbcefxy0-9]+\.mcdn\.bilivideo\.cn(:(8000|8082))?\/v1\/resource\/, script-path=https://github.com/BiliUniverse/Redirect/releases/download/v0.2.18/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
+
+📺 BiliBili.Redirect.MCDN.upgcxcode.m4s = type=http-request, pattern=^https?:\/\/[adbcefxy0-9]+\.mcdn\.bilivideo\.cn(:(4483|9102))?\/upgcxcode\/, script-path=https://github.com/BiliUniverse/Redirect/releases/download/v0.2.18/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
+
+📺 BiliBili.Redirect.PCDN.upgcxcode.m4s = type=http-request, pattern=^https?:\/\/(.+):4480\/upgcxcode\/, script-path=https://github.com/BiliUniverse/Redirect/releases/download/v0.2.18/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
+
+📺 BiliBili.Redirect.Akamaized.upgcxcode.m4s = type=http-request, pattern=^https?:\/\/upos-(hz|bstar1)-mirrorakam\.akamaized\.net/upgcxcode\/, script-path=https://github.com/BiliUniverse/Redirect/releases/download/v0.2.18/request.bundle.js, argument=Host.Akamaized="{{{Host.Akamaized}}}"&Host.BStar="{{{Host.BStar}}}"&Host.PCDN="{{{Host.PCDN}}}"&Host.MCDN="{{{Host.MCDN}}}"&LogLevel="{{{LogLevel}}}"
 
 [MITM]
-hostname = %APPEND% api.weibo.cn, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, tiebac.baidu.com, *.mobileapi.hupu.com, apissl.gifshow.com, apissl.ksapisrv.com, az*-api.ksapisrv.com, az*-api-idc.ksapisrv.com, az*-api-js.gifshow.com, az*-live.ksapisrv.com, app-api.smzdm.com, baike-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, homepage-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, api.coolapk.com
+hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, *.mcdn.bilivideo.cn, upos-sz-mirror*bstar1.bilivideo.com, upos-*-mirrorakam.akamaized.net
